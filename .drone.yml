@@ -3,6 +3,7 @@ pipeline:
     image: node:10
     commands:
       - mkdir ~/.ssh
+      - echo -n "$SSH_KEY"
       - echo -n "$SSH_KEY" > ~/.ssh/id_rsa
       - chmod 600 ~/.ssh/id_rsa
       - touch ~/.ssh/known_hosts
