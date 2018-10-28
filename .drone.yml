@@ -1,5 +1,6 @@
 pipeline:
   deploy:
+    image: node:10
     commands:
       - mkdir ~/.ssh
       - echo -n "$SSH_KEY" > ~/.ssh/id_rsa
