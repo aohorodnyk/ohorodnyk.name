@@ -13,5 +13,6 @@ pipeline:
       - git config --global user.name "Anton Ohorodnyk"
       - chmod +x node_modules/.bin/*
       - npm run deploy
+    secrets: [ssh_key]
     when:
       branch: master
