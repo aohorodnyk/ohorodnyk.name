@@ -1,0 +1,24 @@
+# Hugo default output directory
+/public
+
+## OS Files
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# OSX
+.DS_Store
+
+# IDEs
+/.idea
+/*.iml
+
+# Frontend
+/bower_components
+/.sass-cache
+/.publish
+
+# ENV file
+.env
