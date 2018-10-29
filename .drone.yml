@@ -7,8 +7,8 @@ pipeline:
       - mkdir ~/.ssh
       - echo $${SSH_KEY} > ~/.ssh/id_rsa
       - touch ~/.ssh/known_hosts
-      - chmod -R 600 ~/.ssh
       - ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
+      - chmod -R 600 ~/.ssh
       - chmod 700 ~/.ssh/id_rsa.pub
       - chmod +x node_modules/.bin/*
       - npm run deploy
