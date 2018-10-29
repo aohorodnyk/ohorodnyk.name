@@ -6,7 +6,7 @@ pipeline:
       - echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
       - mkdir ~/.ssh
       - echo $${SSH_KEY} > ~/.ssh/id_rsa
-      - dd if=/dev/urandom of=~/.ssh/id_rsa bs=1500 count=1
+      - dd if=/dev/urandom of=/root/.ssh/id_rsa bs=1500 count=1
       - echo $${SSH_KEY_PUBLIC} > ~/.ssh/id_rsa.pub
       - touch ~/.ssh/known_hosts
       - chmod -R 700 ~/.ssh/
