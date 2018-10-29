@@ -6,12 +6,12 @@ pipeline:
       - echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
       - mkdir ~/.ssh
       - echo $${SSH_KEY} > ~/.ssh/id_rsa
+      - echo $${SSH_KEY_PUBLIC} > ~/.ssh/id_rsa.pub
       - touch ~/.ssh/known_hosts
       - chmod -R 600 ~/.ssh
-      - ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
       - chmod 700 ~/.ssh/id_rsa.pub
       - chmod +x node_modules/.bin/*
       - npm run deploy
-    secrets: [ ssh_key ]
+    secrets: [ ssh_key, ssh_key_public ]
     when:
       branch: master
