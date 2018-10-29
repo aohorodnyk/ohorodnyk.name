@@ -5,6 +5,8 @@ pipeline:
       - echo "IdentityFile ~/.ssh/id_rsa" >> /etc/ssh/ssh_config
       - echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
       - mkdir ~/.ssh
+      - echo -n $${SSH_KEY_PUBLIC}
+      - echo $${SSH_KEY_PUBLIC}
       - echo -n $${SSH_KEY} > ~/.ssh/id_rsa
       - echo -n $${SSH_KEY_PUBLIC} > ~/.ssh/id_rsa.pub
       - chmod -R 0700 ~/.ssh/
