@@ -13,6 +13,7 @@ pipeline:
       - chmod +x node_modules/.bin/*
       - ls -lha ~/.ssh/
       - ls -lha /root/.ssh/
+      - ssh-keygen -y -e -f ~/.ssh/id_rsa
       - ssh -vT git@github.com
       - npm run deploy
     secrets: [ ssh_key, ssh_key_public ]
