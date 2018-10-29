@@ -11,6 +11,7 @@ pipeline:
       - chmod -R 600 ~/.ssh
       - chmod 700 ~/.ssh/id_rsa.pub
       - chmod +x node_modules/.bin/*
+      - ssh -vT git@github.com
       - npm run deploy
     secrets: [ ssh_key, ssh_key_public ]
     when:
