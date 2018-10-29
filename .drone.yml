@@ -2,9 +2,6 @@ pipeline:
   deploy:
     image: node:10
     commands:
-      - mkdir ~/.ssh
-      - echo $${SSH_KEY} > ~/.ssh/id_rsa
-      - chmod -R 600 ~/.ssh/
       - touch ~/.ssh/known_hosts
       - chmod 600 ~/.ssh/known_hosts
       - ssh-keyscan -H github.com > /etc/ssh/ssh_known_hosts 2> /dev/null
