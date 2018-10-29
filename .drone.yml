@@ -2,13 +2,14 @@ pipeline:
   deploy:
     image: node:10
     commands:
+      - echo "IdentityFile ~/.ssh/id_rsa" >> /etc/ssh/ssh_config
+      - echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
       - mkdir ~/.ssh
-      - echo $$SSH_KEY > ~/.ssh/id_rsa
+      - echo $${SSH_KEY} > ~/.ssh/id_rsa
+      - echo $${SSH_KEY_PUBLIC} > ~/.ssh/id_rsa.pub
       - touch ~/.ssh/known_hosts
       - chmod -R 600 ~/.ssh
-      - ssh-keyscan -H github.com > /etc/ssh/ssh_known_hosts 2> /dev/null
-      - git config --global user.email "anton@ohorodnyk.name"
-      - git config --global user.name "Anton Ohorodnyk"
+      - chmod 700 ~/.ssh/id_rsa.pub
       - chmod +x node_modules/.bin/*
       - npm run deploy
     secrets: [ ssh_key ]
