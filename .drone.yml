@@ -11,10 +11,8 @@ pipeline:
       - chmod 644 ~/.ssh/id_rsa.pub
       - chmod 400 ~/.ssh/id_rsa
       - chmod +x node_modules/.bin/*
-      - ls -lha ~/.ssh/
-      - ls -lha /root/.ssh/
-      - ssh-keygen -y -e -f ~/.ssh/id_rsa
-      - ssh-keygen -y -e -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
+      - cat ~/.ssh/id_rsa
+      - cat ~/.ssh/id_rsa.pub
       - ssh -vT git@github.com
       - npm run deploy
     secrets: [ ssh_key, ssh_key_public ]
