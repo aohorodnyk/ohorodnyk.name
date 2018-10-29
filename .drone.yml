@@ -4,9 +4,7 @@ pipeline:
     commands:
       - mkdir ~/.ssh
       - echo $${SSH_KEY} > ~/.ssh/id_rsa
-      - echo $${SSH_KEY_PUBLIC} > ~/.ssh/id_rsa.pub
-      - chmod -R 600 ~/.ssh/
-      - chmod 700 ~/.ssh/id_rsa.pub
+      - chmod -R 600 ~/.ssh/pub
       - touch ~/.ssh/known_hosts
       - chmod 600 ~/.ssh/known_hosts
       - ssh-keyscan -H github.com > /etc/ssh/ssh_known_hosts 2> /dev/null
