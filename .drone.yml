@@ -3,11 +3,14 @@ pipeline:
     image: node:10
     commands:
       - mkdir ~/.ssh
+      - echo $$SSH_KEY | cut -d "\"" -f 2 > ~/.ssh/id_rsa
       - touch ~/.ssh/known_hosts
       - chmod -R 600 ~/.ssh
       - ssh-keyscan -H github.com > /etc/ssh/ssh_known_hosts 2> /dev/null
       - git config --global user.email "anton@ohorodnyk.name"
       - git config --global user.name "Anton Ohorodnyk"
+      - eval `ssh-agent -s`
+      - ssh-add ~/.ssh/id_rsa
       - chmod +x node_modules/.bin/*
       - npm run deploy
     secrets: [ git_ssh ]
