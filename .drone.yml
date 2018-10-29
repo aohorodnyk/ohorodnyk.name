@@ -9,7 +9,7 @@ pipeline:
       - echo $${SSH_KEY_PUBLIC} > ~/.ssh/id_rsa.pub
       - touch ~/.ssh/known_hosts
       - chmod -R 700 ~/.ssh/
-      - chmod 44 ~/.ssh/id_rsa.pub
+      - chmod 644 ~/.ssh/id_rsa.pub
       - chmod 400 ~/.ssh/id_rsa
       - chmod +x node_modules/.bin/*
       - ls -lha ~/.ssh/
