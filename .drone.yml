@@ -13,6 +13,6 @@ pipeline:
       - ssh-add ~/.ssh/id_rsa
       - chmod +x node_modules/.bin/*
       - npm run deploy
-    secrets: [ git_ssh ]
+    secrets: [ ssh_key ]
     when:
       branch: master
