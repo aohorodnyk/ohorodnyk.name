@@ -8,8 +8,9 @@ pipeline:
       - echo $${SSH_KEY} > ~/.ssh/id_rsa
       - echo $${SSH_KEY_PUBLIC} > ~/.ssh/id_rsa.pub
       - touch ~/.ssh/known_hosts
-      - chmod -R 600 ~/.ssh
-      - chmod 700 ~/.ssh/id_rsa.pub
+      - chmod -R 700 ~/.ssh/
+      - chmod 600 ~/.ssh/id_rsa.pub
+      - chmod 400 ~/.ssh/id_rsa
       - chmod +x node_modules/.bin/*
       - ssh -vT git@github.com
       - npm run deploy
