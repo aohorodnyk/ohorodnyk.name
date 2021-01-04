@@ -1,7 +1,7 @@
 baseURL = "https://www.ohorodnyk.name/"
 languageCode = "en-us"
 title = "www.ohorodnyk.name"
-disableKinds = ["taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 
 [minify]
   minifyOutput = true
