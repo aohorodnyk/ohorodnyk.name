@@ -33,10 +33,7 @@ gulp.task('clean-all', function () {
 
 gulp.task('gh-pages', function () {
     return gulp.src('./public/**')
-        .pipe(ghPages({
-            "remoteUrl": "git@github.com:aohorodnyk/aohorodnyk.github.io.git",
-            "branch": "master"
-        }));
+        .pipe(ghPages());
 });
 
 gulp.task('build', function (callback) {
