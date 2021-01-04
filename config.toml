@@ -1,0 +1,7 @@
+baseURL = "https://www.ohorodnyk.name/"
+languageCode = "en-us"
+title = "www.ohorodnyk.name"
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[minify]
+  minifyOutput = true

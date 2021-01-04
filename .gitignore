@@ -19,6 +19,7 @@ $RECYCLE.BIN/
 /bower_components
 /.sass-cache
 /.publish
+/resources
 
 # ENV file
 .env
